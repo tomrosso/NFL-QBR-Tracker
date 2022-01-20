@@ -1,0 +1,15 @@
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/bin/Debug/net5.0/NFL-QBR-Tracker.deps.json
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/bin/Debug/net5.0/NFL-QBR-Tracker.runtimeconfig.json
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/bin/Debug/net5.0/NFL-QBR-Tracker.runtimeconfig.dev.json
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/bin/Debug/net5.0/NFL-QBR-Tracker.dll
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/bin/Debug/net5.0/ref/NFL-QBR-Tracker.dll
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/bin/Debug/net5.0/NFL-QBR-Tracker.pdb
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.csproj.AssemblyReference.cache
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.GeneratedMSBuildEditorConfig.editorconfig
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.AssemblyInfoInputs.cache
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.AssemblyInfo.cs
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.csproj.CoreCompileInputs.cache
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.dll
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/ref/NFL-QBR-Tracker.dll
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.pdb
+/Users/thomasrosso/Documents/GitHub/NFL-QBR-Tracker/obj/Debug/net5.0/NFL-QBR-Tracker.genruntimeconfig.cache
