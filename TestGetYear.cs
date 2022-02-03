@@ -14,7 +14,7 @@ public static bool RunTest()
     string result = Program.GetYear();
     if (result != "2019")
     {
-        // TODO(jcollard 2022-02-03): Write a message to the suer explaining why this is failing. (See TestGetStat for example).
+        Console.WriteLine($"Invalid input, expected 2019 but received {result}");
         return false;
     }
     
