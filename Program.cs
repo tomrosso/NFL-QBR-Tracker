@@ -32,7 +32,7 @@ namespace NFL_QBR_Tracker
         /// Given a prompt to show the user, displays the prompt then reads
         /// input from keyboard until user types in a year displayed.
         /// If the user does not enter a year displayed the message displays an error
-        /// message and prompts the user again.
+        /// until returns true.
         /// </summary>
         /// <param name="year">The number between 1980 and 2020 the user chose</param>
         public static string GetYear()
@@ -41,6 +41,23 @@ namespace NFL_QBR_Tracker
             // 1. Prompt the user to enter a year between 1980 and 2020
             // 2. If the user enters a valid year, return that year
             // 3. Otherwise, display "Invalid" and go to step 1
+            int user choice;
+
+            do{
+                Console.Write($"Enter a year between 1980 and 2020");
+                string input = Console.ReadLine();
+                bool isAYear = int.TryParse(input, out userChoice);
+                if (isAYear == false)
+                {
+                    Console.Error.WriteLine("You did not enter a year");
+                }
+
+                else if (userChoice <= 1980 && => 2020)
+                {
+                   Console.WriteLine($"The input was not between 1980 and 2020");
+                }
+    
+            }
 
             // Feedback(jcollard 2022-02-08): Here is a similar program
             // that you can use as an example for how to write this method:
