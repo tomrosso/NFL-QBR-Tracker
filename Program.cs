@@ -41,6 +41,10 @@ namespace NFL_QBR_Tracker
             // 1. Prompt the user to enter a year between 1980 and 2020
             // 2. If the user enters a valid year, return that year
             // 3. Otherwise, display "Invalid" and go to step 1
+
+            // Feedback(jcollard 2022-02-08): Here is a similar program
+            // that you can use as an example for how to write this method:
+            // https://jcollard.github.io/IntroToCSharpSite/examples/read-input
             return null;
         }
 
@@ -61,6 +65,11 @@ namespace NFL_QBR_Tracker
             // 4. Prompt the user to enter a team name
             // 5. If the entered name is in the list, return that name
             // 6. Otherwise display "Invalid" and goto step 3.
+
+            // Feedback(jcollard 2022-02-08): I've written a similar program
+            // that you can uas as an example for how to write this method:
+            // https://jcollard.github.io/IntroToCSharpSite/examples/display-options
+
             return null;
         }
 
