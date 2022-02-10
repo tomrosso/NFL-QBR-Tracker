@@ -43,7 +43,7 @@ namespace NFL_QBR_Tracker
             // 1. Prompt the user to enter a year between 1980 and 2020
             // 2. If the user enters a valid year, return that year
             // 3. Otherwise, display "Invalid" and go to step 1
-            bool userChoice;
+            string userChoice;
 
             do
             {
@@ -52,7 +52,7 @@ namespace NFL_QBR_Tracker
                 bool isAYear = int.TryParse(input, out userChoice);
                 if (isAYear == false)
                 {
-                    Console.Error.WriteLine("You did not enter a year");
+                    Console.Error.WriteLine("You did not enter a year.");
                 }
                 
                 else if (userChoice <= 1980 >= 2020)
@@ -60,15 +60,22 @@ namespace NFL_QBR_Tracker
                     Console.WriteLine($"The input was not between 1980 and 2020");
                 }
             }
-            while (userChoice userChoice <= 1980 >= 2020)
+            while (userChoice userChoice <= 1980 >= 2020);
             return userChoice;
-        
+
+
             
         
 
             // Feedback(jcollard 2022-02-08): Here is a similar program
             // that you can use as an example for how to write this method:
             // https://jcollard.github.io/IntroToCSharpSite/examples/read-input
+        }
+
+        public static void Main()
+        {
+            int value = GetYear();
+            Console.WriteLine($"You entered {value}");
         }
 
     /// <summary>
@@ -89,11 +96,29 @@ namespace NFL_QBR_Tracker
         // 5. If the entered name is in the list, return that name
         // 6. Otherwise display "Invalid" and goto step 3.
 
+        if (validTeams == null) throw new ArgumentNullException("List of options may not be null.");
+        if (validTeams.Count == 0) throw new ArgumentNullException("List of options must contain at least 1 option.");
+
+        int ix = 1;
+        foreach (string validTeam in validTeams)
+        {
+            Console.WriteLine($"{ix}. {validTeam}");
+            ix = ix + 1;
+        }
         // Feedback(jcollard 2022-02-08): I've written a similar program
         // that you can uas as an example for how to write this method:
         // https://jcollard.github.io/IntroToCSharpSite/examples/display-options
 
         return null;
+    }
+    
+    public static void Main()
+    {
+        List<string> validTeams = new List<string>();
+        validTeams.Add("First Choice");
+        validTeams.Add("Second Choice");
+        validTeams.Add("Third Choice");
+        GetTeam(validTeams);
     }
 
     /// <summary>
