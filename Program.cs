@@ -14,6 +14,8 @@ namespace NFL_QBR_Tracker
                 TestAll();
                 return;
             }
+
+            
         }
         public static void TestAll()
         {
@@ -43,7 +45,7 @@ namespace NFL_QBR_Tracker
             // 1. Prompt the user to enter a year between 1980 and 2020
             // 2. If the user enters a valid year, return that year
             // 3. Otherwise, display "Invalid" and go to step 1
-            bool userChoice;
+            bool userChoice; // TODO(jcollard 2022-02-10): This needs to be an `int` not a `bool`
 
             do
             {
@@ -55,12 +57,12 @@ namespace NFL_QBR_Tracker
                     Console.Error.WriteLine("You did not enter a year");
                 }
                 
-                else if (userChoice <= 1980 >= 2020)
+                else if (userChoice <= 1980 >= 2020) // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
                 {
                     Console.WriteLine($"The input was not between 1980 and 2020");
                 }
             }
-            while (userChoice userChoice <= 1980 >= 2020)
+            while (userChoice userChoice <= 1980 >= 2020); // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
             return userChoice;
         
             
@@ -127,13 +129,6 @@ namespace NFL_QBR_Tracker
     {
 
     }
-    // TODO(jcollard 2022-01-27):
-    // This is a great start! I think you should add the following method:
-    // public static void DisplayStat(string year, string team, string stat)
-    // This method will be called after the user has made each selection. This
-    // method will use the year, team, and stat to look up the results and display
-    // a message to the user.
-}
 
 }
 
