@@ -28,7 +28,7 @@ namespace NFL_QBR_Tracker
             validTeams.Add("49ers");
             validTeams.Add("Seahawks");
             validTeams.Add("Buccaneers");
-            validTeams.Add("Team");
+            validTeams.Add("Commanders");
             validTeams.Add("Ravens");
             validTeams.Add("Bills");
             validTeams.Add("Bengals");
