@@ -62,7 +62,7 @@ namespace NFL_QBR_Tracker
                     Console.WriteLine($"The input was not between 1980 and 2020");
                 }
             }
-            while (userChoice userChoice <= 1980 >= 2020); // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
+            while (userChoice <= 1980 >= 2020); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
             return userChoice;
         
             
