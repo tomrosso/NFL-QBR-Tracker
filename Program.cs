@@ -15,9 +15,41 @@ namespace NFL_QBR_Tracker
                 return;
             }
 
+            NFLStats stats = new NFLStats();
+
+            Console.WriteLine("Enter a year between 1980 and 2020:");
+            int year = int.Parse(Console.ReadLine());
+
+            List<string> teams = stats.GetTeamNames(year);
+
+            Console.Clear();
+            Console.WriteLine($"Showing Teams from {year}");
+
+            string team = GetTeam(teams);
+
+
+            Console.WriteLine("\nEnter a Team Name: ");
+            string selectedTeam = Console.ReadLine();
+
+            List<string> validStats = stats.
+
+            Console.WriteLine("Offensive Stats: ");
+            foreach (string name in validStats)
+            {
+                Console.Write($"{name} ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Select a stat: ");
+            string selectedStat = Console.ReadLine();
+            string stat = stats.GetStat(year, userChoice validTeams, userChoice validStats);
+            Console.WriteLine($"In {year} the {userChoice validteams} had {userChoice validStats} in {DisplayStat}!");
+
+            return;
+
             string value = GetYear();
             Console.WriteLine($"You entered {value}");
-List<string> validTeams = new List<string>();
+            List<string> validTeams = new List<string>();
 
             validTeams.Add("Cardinals");
             validTeams.Add("Falcons");
@@ -51,10 +83,10 @@ List<string> validTeams = new List<string>();
             validTeams.Add("Jets");
             validTeams.Add("Steelers");
             validTeams.Add("Titans");
-            string team = GetTeam(validTeams);
+            string t2 = GetTeam(validTeams);
             Console.WriteLine($"You selected {team}");
 
-                      List<string> validStats = new List<string>();
+            List<string> validStats = new List<string>();
             validStats.Add("QBR");
             validStats.Add("Rushing yds per game");
             validStats.Add("Passing yds per game");
