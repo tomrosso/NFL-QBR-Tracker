@@ -5,7 +5,9 @@ My project is very similar to the high score tracker, except it tracks NFL QBR's
 
 ## High Level Flowchart
 ![Image Text](HighLevelFlowchart1.png)
+![Image Text](HighLevelFlowchart2.png)
 ## Methods
 ![Image Text](Years.png)
 ![Image Text](Teams.png)
 ![Image Text](Stats.png)
+![Image Text](DisplayStat.png)

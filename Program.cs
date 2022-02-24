@@ -28,80 +28,94 @@ namespace NFL_QBR_Tracker
             string team = GetTeam(teams);
 
 
-            Console.WriteLine("\nEnter a Team Name: ");
-            string selectedTeam = Console.ReadLine();
+            // Console.WriteLine("\nEnter a Team Name: ");
+            // string selectedTeam = Console.ReadLine();
 
-            List<string> validStats = stats.
+            List<string> allowed = stats.GetOffenseStatNames(year);
 
             Console.WriteLine("Offensive Stats: ");
-            foreach (string name in validStats)
+            foreach (string name in allowed)
             {
                 Console.Write($"{name} ");
             }
 
-            Console.WriteLine();
-            Console.WriteLine("Select a stat: ");
-            string selectedStat = Console.ReadLine();
-            string stat = stats.GetStat(year, userChoice validTeams, userChoice validStats);
-            Console.WriteLine($"In {year} the {userChoice validteams} had {userChoice validStats} in {DisplayStat}!");
+            // Console.WriteLine();
+            // Console.WriteLine("Select a stat: ");
+            // string selectedStat = Console.ReadLine();
+            // // string stat = stats.GetStat(year, userChoice validTeams, userChoice validStats);
+            // // Console.WriteLine($"In {year} the {userChoice validteams} had {userChoice validStats} in {DisplayStat}!");
 
-            return;
+            // // return;
 
-            string value = GetYear();
-            Console.WriteLine($"You entered {value}");
-            List<string> validTeams = new List<string>();
+            // string value = GetYear();
+            // Console.WriteLine($"You entered {value}");
+            // List<string> validTeams = new List<string>();
 
-            validTeams.Add("Cardinals");
-            validTeams.Add("Falcons");
-            validTeams.Add("Panthers");
-            validTeams.Add("Bears");
-            validTeams.Add("Cowboys");
-            validTeams.Add("Lions");
-            validTeams.Add("Packers");
-            validTeams.Add("Rams");
-            validTeams.Add("Vikings");
-            validTeams.Add("Saints");
-            validTeams.Add("Giants");
-            validTeams.Add("Eagles");
-            validTeams.Add("49ers");
-            validTeams.Add("Seahawks");
-            validTeams.Add("Buccaneers");
-            validTeams.Add("Commanders");
-            validTeams.Add("Ravens");
-            validTeams.Add("Bills");
-            validTeams.Add("Bengals");
-            validTeams.Add("Browns");
-            validTeams.Add("Broncos");
-            validTeams.Add("Texans");
-            validTeams.Add("Colts");
-            validTeams.Add("Jaguars");
-            validTeams.Add("Chiefs");
-            validTeams.Add("Raiders");
-            validTeams.Add("Chargers");
-            validTeams.Add("Dolphins");
-            validTeams.Add("Patriots");
-            validTeams.Add("Jets");
-            validTeams.Add("Steelers");
-            validTeams.Add("Titans");
-            string t2 = GetTeam(validTeams);
-            Console.WriteLine($"You selected {team}");
+            // validTeams.Add("Cardinals");
+            // validTeams.Add("Falcons");
+            // validTeams.Add("Panthers");
+            // validTeams.Add("Bears");
+            // validTeams.Add("Cowboys");
+            // validTeams.Add("Lions");
+            // validTeams.Add("Packers");
+            // validTeams.Add("Rams");
+            // validTeams.Add("Vikings");
+            // validTeams.Add("Saints");
+            // validTeams.Add("Giants");
+            // validTeams.Add("Eagles");
+            // validTeams.Add("49ers");
+            // validTeams.Add("Seahawks");
+            // validTeams.Add("Buccaneers");
+            // validTeams.Add("Commanders");
+            // validTeams.Add("Ravens");
+            // validTeams.Add("Bills");
+            // validTeams.Add("Bengals");
+            // validTeams.Add("Browns");
+            // validTeams.Add("Broncos");
+            // validTeams.Add("Texans");
+            // validTeams.Add("Colts");
+            // validTeams.Add("Jaguars");
+            // validTeams.Add("Chiefs");
+            // validTeams.Add("Raiders");
+            // validTeams.Add("Chargers");
+            // validTeams.Add("Dolphins");
+            // validTeams.Add("Patriots");
+            // validTeams.Add("Jets");
+            // validTeams.Add("Steelers");
+            // validTeams.Add("Titans");
+            // string t2 = GetTeam(validTeams);
+            // Console.WriteLine($"You selected {team}");
 
             List<string> validStats = new List<string>();
-            validStats.Add("QBR");
-            validStats.Add("Rushing yds per game");
-            validStats.Add("Passing yds per game");
-            validStats.Add("INTs per game");
-            validStats.Add("Completion % per game");
-            validStats.Add("Pass attempts per game");
-            validStats.Add("Touchdowns per game");
-            validStats.Add("Total touchdowns");
-            validStats.Add("Total passing yds");
-            validStats.Add("Total rushing yds");
-            validStats.Add("Total INTs");
-            validStats.Add("Total pass attempts");
+            validStats.Add("passAtt");
+            validStats.Add("passInt");
+            validStats.Add("passTD");
+            validStats.Add("passYdsPerc");
+            validStats.Add("passSacked");
+            validStats.Add("passSackedPerc");
+            validStats.Add("passCmpPerc");
+            validStats.Add("passYdsPerAtt");
+            validStats.Add("passTdperc");
+            validStats.Add("passCmp");
+            validStats.Add("passNetYdsPerAtt");
+            validStats.Add("passRating");
+            validStats.Add("passLong");
+            validStats.Add("passYds");
+            validStats.Add("passAdjNetYdsPerAtt");
+            validStats.Add("passSackedYds");
+            validStats.Add("passAdjPerAtt");
+            validStats.Add("passIntPerc");
+            validStats.Add("passYdsPerG");
+            validStats.Add("passAttperG");
+            validStats.Add("passFdPerG");
+            validStats.Add("passIntPerG");
+            validStats.Add("passSackedPerG");
+            validStats.Add("passTdPerG");
             string Stat = GetStat(validStats);
             Console.WriteLine($"You selected {Stat}");
 
+            string theStat = stats.GetOffenseStat(year, team, Stat);
+            Console.WriteLine($"The QB stat you chose is {theStat}");
 
         }
         public static void TestAll()
