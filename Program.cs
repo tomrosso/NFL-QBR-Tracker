@@ -18,7 +18,7 @@ namespace NFL_QBR_Tracker
             NFLStats stats = new NFLStats();
 
             Console.WriteLine("Enter a year between 1980 and 2020:");
-            int year = int.Parse(Console.ReadLine());
+            int year = int.Parse(Program.GetYear());
 
             List<string> teams = stats.GetTeamNames(year);
 
@@ -87,10 +87,10 @@ namespace NFL_QBR_Tracker
             // Console.WriteLine($"You selected {team}");
 
             List<string> validStats = new List<string>();
-            validStats.Add("passAtt");
+            validStats.Add("passTdPerc");
             validStats.Add("passInt");
             validStats.Add("passTD");
-            validStats.Add("passYdsPerc");
+            validStats.Add("passYdsPerCmp");
             validStats.Add("passSacked");
             validStats.Add("passSackedPerc");
             validStats.Add("passCmpPerc");
@@ -158,7 +158,7 @@ namespace NFL_QBR_Tracker
                     Console.Error.WriteLine("You did not enter a year.");
                 }
 
-                else if (userChoice <= 1980 || userChoice >= 2022) // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
+                else if (userChoice < 1980 || userChoice >= 2022) // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
                 {
                     Console.WriteLine($"The input was not between 1980 and 2020");
                 }
