@@ -17,7 +17,6 @@ namespace NFL_QBR_Tracker
 
             NFLStats stats = new NFLStats();
 
-            Console.WriteLine("Enter a year between 1980 and 2020:");
             int year = int.Parse(Program.GetYear());
 
             List<string> teams = stats.GetTeamNames(year);
@@ -87,30 +86,33 @@ namespace NFL_QBR_Tracker
             // Console.WriteLine($"You selected {team}");
 
             List<string> validStats = new List<string>();
+
             validStats.Add("passTdPerc");
-            validStats.Add("passInt");
-            validStats.Add("passTD");
-            validStats.Add("passYdsPerCmp");
-            validStats.Add("passSacked");
-            validStats.Add("passSackedPerc");
-            validStats.Add("passCmpPerc");
-            validStats.Add("passYdsPerAtt");
-            validStats.Add("passTdperc");
-            validStats.Add("passCmp");
-            validStats.Add("passNetYdsPerAtt");
-            validStats.Add("passRating");
-            validStats.Add("passLong");
-            validStats.Add("passYds");
-            validStats.Add("passAdjNetYdsPerAtt");
-            validStats.Add("passSackedYds");
-            validStats.Add("passAdjPerAtt");
-            validStats.Add("passIntPerc");
-            validStats.Add("passYdsPerG");
-            validStats.Add("passAttperG");
-            validStats.Add("passFdPerG");
-            validStats.Add("passIntPerG");
             validStats.Add("passSackedPerG");
+            validStats.Add("passSacked");
+            validStats.Add("passCmpPerG");
+            validStats.Add("passFd");
+            validStats.Add("passSackedPerc");
+            validStats.Add("passRating");
+            validStats.Add("passAdjYdsPerAtt");
+            validStats.Add("passIntPerG");
             validStats.Add("passTdPerG");
+            validStats.Add("passNetYdsPerAtt");
+            validStats.Add("passFdPerG");
+            validStats.Add("passCmpPerc");
+            validStats.Add("passSackedYds");
+            validStats.Add("passYdsPerG");
+            validStats.Add("passCmp");
+            validStats.Add("passIntPerc");
+            validStats.Add("passInt");
+            validStats.Add("passYdsPerCmp");
+            validStats.Add("passAtt");
+            validStats.Add("passAttPerG");
+            validStats.Add("passLong");
+            validStats.Add("passAdjNetYdsPerAtt");
+            validStats.Add("passYds");
+            validStats.Add("passSackedYdsPerG");
+
             string Stat = GetStat(validStats);
             Console.WriteLine($"You selected {Stat}");
 
@@ -163,7 +165,7 @@ namespace NFL_QBR_Tracker
                     Console.WriteLine($"The input was not between 1980 and 2020");
                 }
             }
-            while (userChoice <= 1980 || userChoice >= 2022); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
+            while (userChoice < 1980 || userChoice >= 2022); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
             return "" + userChoice;
 
 
