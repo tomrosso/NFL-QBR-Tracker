@@ -30,13 +30,13 @@ namespace NFL_QBR_Tracker
             // Console.WriteLine("\nEnter a Team Name: ");
             // string selectedTeam = Console.ReadLine();
 
-            List<string> allowed = stats.GetOffenseStatNames(year);
+            //List<string> allowed = stats.GetOffenseStatNames(year);
 
-            Console.WriteLine("Offensive Stats: ");
-            foreach (string name in allowed)
-            {
-                Console.Write($"{name} ");
-            }
+            //Console.WriteLine("Offensive Stats: ");
+            // foreach (string name in allowed)
+            // {
+            //     Console.Write($"{name} ");
+            // }
 
             // Console.WriteLine();
             // Console.WriteLine("Select a stat: ");
@@ -94,7 +94,6 @@ namespace NFL_QBR_Tracker
             validStats.Add("passFd");
             validStats.Add("passSackedPerc");
             validStats.Add("passRating");
-            validStats.Add("passAdjYdsPerAtt");
             validStats.Add("passIntPerG");
             validStats.Add("passTdPerG");
             validStats.Add("passNetYdsPerAtt");
@@ -109,7 +108,6 @@ namespace NFL_QBR_Tracker
             validStats.Add("passAtt");
             validStats.Add("passAttPerG");
             validStats.Add("passLong");
-            validStats.Add("passAdjNetYdsPerAtt");
             validStats.Add("passYds");
             validStats.Add("passSackedYdsPerG");
 
@@ -117,7 +115,7 @@ namespace NFL_QBR_Tracker
             Console.WriteLine($"You selected {Stat}");
 
             string theStat = stats.GetOffenseStat(year, team, Stat);
-            Console.WriteLine($"The QB stat you chose is {theStat}");
+        Console.Write($"You chose the QB stat {Stat} which was {theStat} in {year} for the {team} ");
 
         }
         public static void TestAll()
@@ -259,7 +257,7 @@ namespace NFL_QBR_Tracker
             int ix = 1;
             foreach (string validStat in validStats)
             {
-                Console.WriteLine($"{ix}. {validStat}");
+                Console.WriteLine($"{ix}. {validStat} - {GetStatInfo(validStat)}");
                 ix = ix + 1;
 
 
@@ -289,14 +287,57 @@ namespace NFL_QBR_Tracker
 
         }
         /// <summary>
-        /// 
+        ///Once the user enters the the stat they want to be displayed 
+        /// the message will display the stat name as well as the stat itself
         /// </summary>
-        /// <param name="year"></param>
-        /// <param name="team"></param>
-        /// <param name="stat"></param>
+        /// <param name="year">The number between 1980 and 2020 the user chose</param>
+        /// <param name="team">The choices to display to the user chose</param>
+        /// <param name="stat">The choices to display to the user chose</param>
+        /// <param name="Displaystat">Displays the stat name when displaying stat</param>
         public static void DisplayStat(string year, string team, string stat)
         {
 
+        }
+
+        public static string GetStatInfo(string rawStat)
+        {
+            if (rawStat == "passTdPerc")
+            {
+                return "This is the percentage passing touchdowns a QB threw";
+            }
+          if (rawStat == "passSackedPerG")
+            {
+                return "This is the amount of times a QB got sacked per game";
+            }
+            if (rawStat == "passSacked")
+            {
+                return "This is the amount of times a QB got sacked in that year";
+            }
+                        if (rawStat == "passCmpPerG")
+            {
+                return "This is the amount of completions a QB had per game";
+            }
+            if (rawStat == "passFd")
+            {
+                return "This is the amount of passing first downs in that year";
+            }
+          if (rawStat == "passSackedPerc")
+            {
+                return "This is the percentage a QB got sacked in that year";
+            }
+            if (rawStat == "passRating")
+            {
+                return "Passer rating is calculated using a player's passing attempts, completions, yards, touchdowns, and interceptions and is on a scale from 0 to 158.3. ";
+            }
+                        if (rawStat == "passIntPerG")
+            {
+                return "This is the passing interception per game";
+            }
+                                    if (rawStat == "passTdPerG")
+            {
+                return "This is the passing touchdowns per game";
+            }
+            return null;
         }
 
     }
