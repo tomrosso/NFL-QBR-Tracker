@@ -337,6 +337,67 @@ namespace NFL_QBR_Tracker
             {
                 return "This is the passing touchdowns per game";
             }
+            if (rawStat == "passNetYdsPerAtt")
+            {
+                return "This is a stat incorporated passing yards, sacks, touchdowns and interceptions";
+            }
+               if (rawStat == "passFdperG")
+            {
+                return "This is the amount of passing first downs per game";
+            }
+               if (rawStat == "passCmpPerc")
+            {
+                return "This is the percentage of completions in that year";
+            }
+               if (rawStat == "passSackedYds")
+            {
+                return "This is the amount of yards the QB got sacked in that year";
+            }
+               if (rawStat == "passYdsPerG")
+            {
+                return "This is the amount of passing yards per game";
+            }
+               if (rawStat == "passCmp")
+            {
+                return "This is the amount of pass completions that year";
+            }
+               if (rawStat == "passIntPerc")
+            {
+                return "This is the interception percentage of that year";
+            }
+               if (rawStat == "passInt")
+            {
+                return "This is the amount of passing interceptions in that year";
+            }
+               if (rawStat == "passYdsPerCmp")
+            {
+                return "This is the amount passing yards per completion in that year";
+            }
+               if (rawStat == "passAtt")
+            {
+                return "This is the amount of attempts in that season";
+            }
+               if (rawStat == "passAttPerG")
+            {
+                return "This is the amount of pass attempts per game";
+            }
+               if (rawStat == "passLong")
+            {
+                return "This is the long completion the QB made in that year";
+            }
+               if (rawStat == "passYds")
+            {
+                return "This is the total amount of passing yards in that year";
+            }
+               if (rawStat == "passSackedYdsPerG")
+            {
+                return "This is amount of yards a QB got sacked per game";
+            }
+                if (rawStat == "passFdPerG")
+            {
+                return "This is the amount of first downs per game";
+            }
+
             return null;
         }
 
