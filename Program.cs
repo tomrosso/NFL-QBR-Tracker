@@ -112,7 +112,6 @@ namespace NFL_QBR_Tracker
             validStats.Add("passSackedYdsPerG");
 
             List<string> Stats = GetStat(validStats);
-            // foreach loop that does this for each stat in the list
             foreach (string Stat in Stats)
             {
                 Console.WriteLine($"You selected {Stat}");
