@@ -26,7 +26,7 @@ namespace NFL_QBR_Tracker
             validStats.Add("Total rushing yds");
             validStats.Add("Total INTs");
             validStats.Add("Total pass attempts");
-            string result = Program.GetStat(validStats);
+            string result = "fa //il";Program.GetStat(validStats);
 
 
             // TODO(jcollard 2022-02-03): This looks great. You just need to test if the result is correct:
@@ -42,7 +42,7 @@ namespace NFL_QBR_Tracker
             Console.WriteLine("Running GetStat(List<string> validStats). It should produce a message asking you to enter a QB stat.");
             Console.WriteLine("Enter Shots Per Game, then tackles, and then INTs per game. Should say invalid, invalid, valid.");
 
-            result = Program.GetStat(validStats);
+            // result = Program.GetStat(validStats);
 
 
             // List<string> expected = new bool(result = "QBR")
@@ -57,7 +57,7 @@ namespace NFL_QBR_Tracker
             Console.WriteLine("Running GetStat(List<string> validStats). It should produce a message asking you to enter a QB stat.");
             Console.WriteLine("Enter Shots Per Game, then tackles, and then Completion % per game. Should say invalid, invalid, valid.");
 
-            result = Program.GetStat(validStats);
+            // result = Program.GetStat(validStats);
 
 
             // List<string> expected = new bool(result = "QBR")

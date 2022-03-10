@@ -111,11 +111,16 @@ namespace NFL_QBR_Tracker
             validStats.Add("passYds");
             validStats.Add("passSackedYdsPerG");
 
-            string Stat = GetStat(validStats);
-            Console.WriteLine($"You selected {Stat}");
+            List<string> Stats = GetStat(validStats);
+            // foreach loop that does this for each stat in the list
+            foreach (string Stat in Stats)
+            {
+                Console.WriteLine($"You selected {Stat}");
+                string theStat = stats.GetOffenseStat(year, team, Stat);
+                Console.Write($"You chose the QB stat {Stat} which was {theStat} in {year} for the {team} ");
+            }
 
-            string theStat = stats.GetOffenseStat(year, team, Stat);
-        Console.Write($"You chose the QB stat {Stat} which was {theStat} in {year} for the {team} ");
+
 
         }
         public static void TestAll()
@@ -241,9 +246,16 @@ namespace NFL_QBR_Tracker
         /// <param name="year">The number between 1980 and 2020 the user chose</param>
         /// <param name="team">The choices to display to the user chose</param>
         /// <param name="stat">The choices to display to the user chose</param>
-        public static string GetStat(List<string> validStats)
+        public static List<string> GetStat(List<string> validStats)
+        //    List<string> GetStat = new List<string>(userChoice);
         {
-            // The steps might be closer to this:
+            // 1. Add While loop
+            // Create a list
+            // 2. Loop until user enters 0.
+            // 3. Add to a list
+            // 4. Return the list
+            // while (userChoice != 0)
+
             // 1. Check that validStats has at least 1 option
             // 2. If it does not, throw an exception
             // 3. Display the list of validStats
@@ -253,7 +265,7 @@ namespace NFL_QBR_Tracker
 
             if (validStats == null) throw new ArgumentNullException("List of options may not be null.");
             if (validStats.Count == 0) throw new ArgumentNullException("List of options must contain at least 1 option.");
-
+            List<string> selectedStats = new List<string>();
             int ix = 1;
             foreach (string validStat in validStats)
             {
@@ -266,6 +278,7 @@ namespace NFL_QBR_Tracker
 
             do
             {
+                Console.WriteLine($"Enter 0 to stop game");
                 Console.Write($"Enter an NFL stat: ");
                 string input = Console.ReadLine();
                 bool isAStat = int.TryParse(input, out userChoice);
@@ -278,9 +291,14 @@ namespace NFL_QBR_Tracker
                 {
                     Console.WriteLine($"The input was not a valid stat");
                 }
+                else
+                {
+                    selectedStats.Add(validStats[userChoice - 1]);
+                }
+
             }
-            while (userChoice < 1 || userChoice > validStats.Count); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
-            return validStats[userChoice - 1];
+            while (userChoice != 0); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
+            return selectedStats;
 
 
 
@@ -305,7 +323,7 @@ namespace NFL_QBR_Tracker
             {
                 return "This is the percentage passing touchdowns a QB threw";
             }
-          if (rawStat == "passSackedPerG")
+            if (rawStat == "passSackedPerG")
             {
                 return "This is the amount of times a QB got sacked per game";
             }
@@ -313,7 +331,7 @@ namespace NFL_QBR_Tracker
             {
                 return "This is the amount of times a QB got sacked in that year";
             }
-                        if (rawStat == "passCmpPerG")
+            if (rawStat == "passCmpPerG")
             {
                 return "This is the amount of completions a QB had per game";
             }
@@ -321,7 +339,7 @@ namespace NFL_QBR_Tracker
             {
                 return "This is the amount of passing first downs in that year";
             }
-          if (rawStat == "passSackedPerc")
+            if (rawStat == "passSackedPerc")
             {
                 return "This is the percentage a QB got sacked in that year";
             }
@@ -329,11 +347,11 @@ namespace NFL_QBR_Tracker
             {
                 return "Passer rating is calculated using a player's passing attempts, completions, yards, touchdowns, and interceptions and is on a scale from 0 to 158.3. ";
             }
-                        if (rawStat == "passIntPerG")
+            if (rawStat == "passIntPerG")
             {
                 return "This is the passing interception per game";
             }
-                                    if (rawStat == "passTdPerG")
+            if (rawStat == "passTdPerG")
             {
                 return "This is the passing touchdowns per game";
             }
@@ -341,59 +359,59 @@ namespace NFL_QBR_Tracker
             {
                 return "This is a stat incorporated passing yards, sacks, touchdowns and interceptions";
             }
-               if (rawStat == "passFdperG")
+            if (rawStat == "passFdperG")
             {
                 return "This is the amount of passing first downs per game";
             }
-               if (rawStat == "passCmpPerc")
+            if (rawStat == "passCmpPerc")
             {
                 return "This is the percentage of completions in that year";
             }
-               if (rawStat == "passSackedYds")
+            if (rawStat == "passSackedYds")
             {
                 return "This is the amount of yards the QB got sacked in that year";
             }
-               if (rawStat == "passYdsPerG")
+            if (rawStat == "passYdsPerG")
             {
                 return "This is the amount of passing yards per game";
             }
-               if (rawStat == "passCmp")
+            if (rawStat == "passCmp")
             {
                 return "This is the amount of pass completions that year";
             }
-               if (rawStat == "passIntPerc")
+            if (rawStat == "passIntPerc")
             {
                 return "This is the interception percentage of that year";
             }
-               if (rawStat == "passInt")
+            if (rawStat == "passInt")
             {
                 return "This is the amount of passing interceptions in that year";
             }
-               if (rawStat == "passYdsPerCmp")
+            if (rawStat == "passYdsPerCmp")
             {
                 return "This is the amount passing yards per completion in that year";
             }
-               if (rawStat == "passAtt")
+            if (rawStat == "passAtt")
             {
                 return "This is the amount of attempts in that season";
             }
-               if (rawStat == "passAttPerG")
+            if (rawStat == "passAttPerG")
             {
                 return "This is the amount of pass attempts per game";
             }
-               if (rawStat == "passLong")
+            if (rawStat == "passLong")
             {
                 return "This is the long completion the QB made in that year";
             }
-               if (rawStat == "passYds")
+            if (rawStat == "passYds")
             {
                 return "This is the total amount of passing yards in that year";
             }
-               if (rawStat == "passSackedYdsPerG")
+            if (rawStat == "passSackedYdsPerG")
             {
                 return "This is amount of yards a QB got sacked per game";
             }
-                if (rawStat == "passFdPerG")
+            if (rawStat == "passFdPerG")
             {
                 return "This is the amount of first downs per game";
             }
