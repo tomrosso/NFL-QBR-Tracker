@@ -162,12 +162,12 @@ namespace NFL_QBR_Tracker
                     Console.Error.WriteLine("You did not enter a year.");
                 }
 
-                else if (userChoice < 1980 || userChoice >= 2022) // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
+                else if (userChoice < 1980 || userChoice >= 2020) // TODO(jcollard 2022-02-10): You need to use an or here `else if (userChoice <= 1980 || userChoice >= 2022)`
                 {
                     Console.WriteLine($"The input was not between 1980 and 2020");
                 }
             }
-            while (userChoice < 1980 || userChoice >= 2022); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
+            while (userChoice < 1980 || userChoice >= 2020); // TODO(jcollard 2022-02-10): You need to use an or here `while (userChoice <= 1980 || userChoice >= 2022)`
             return "" + userChoice;
 
 
@@ -267,7 +267,7 @@ namespace NFL_QBR_Tracker
             List<string> selectedStats = new List<string>();
             int ix = 1;
             foreach (string validStat in validStats)
-            {
+            { 
                 Console.WriteLine($"{ix}. {validStat} - {GetStatInfo(validStat)}");
                 ix = ix + 1;
 
