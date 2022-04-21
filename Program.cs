@@ -15,6 +15,28 @@ namespace NFL_QBR_Tracker
                 return;
             }
 
+            string playAgain = "yes";
+
+            while (playAgain == "yes")
+            {
+                RunProgram();
+                Console.WriteLine("\nWould you like to play again");
+                playAgain = Console.ReadLine ();
+
+            }
+
+
+
+        }
+
+        // Add method called RunProgram
+        // Put all of the code in Main in that method
+        // In main, call RunProgram
+        // Ask user if they would like to play again?
+        // If yes, loop
+        // If no, exit loop
+        public static void RunProgram()
+        {
             NFLStats stats = new NFLStats();
 
             int year = int.Parse(Program.GetYear());
@@ -25,65 +47,6 @@ namespace NFL_QBR_Tracker
             Console.WriteLine($"Showing Teams from {year}");
 
             string team = GetTeam(teams);
-
-
-            // Console.WriteLine("\nEnter a Team Name: ");
-            // string selectedTeam = Console.ReadLine();
-
-            //List<string> allowed = stats.GetOffenseStatNames(year);
-
-            //Console.WriteLine("Offensive Stats: ");
-            // foreach (string name in allowed)
-            // {
-            //     Console.Write($"{name} ");
-            // }
-
-            // Console.WriteLine();
-            // Console.WriteLine("Select a stat: ");
-            // string selectedStat = Console.ReadLine();
-            // // string stat = stats.GetStat(year, userChoice validTeams, userChoice validStats);
-            // // Console.WriteLine($"In {year} the {userChoice validteams} had {userChoice validStats} in {DisplayStat}!");
-
-            // // return;
-
-            // string value = GetYear();
-            // Console.WriteLine($"You entered {value}");
-            // List<string> validTeams = new List<string>();
-
-            // validTeams.Add("Cardinals");
-            // validTeams.Add("Falcons");
-            // validTeams.Add("Panthers");
-            // validTeams.Add("Bears");
-            // validTeams.Add("Cowboys");
-            // validTeams.Add("Lions");
-            // validTeams.Add("Packers");
-            // validTeams.Add("Rams");
-            // validTeams.Add("Vikings");
-            // validTeams.Add("Saints");
-            // validTeams.Add("Giants");
-            // validTeams.Add("Eagles");
-            // validTeams.Add("49ers");
-            // validTeams.Add("Seahawks");
-            // validTeams.Add("Buccaneers");
-            // validTeams.Add("Commanders");
-            // validTeams.Add("Ravens");
-            // validTeams.Add("Bills");
-            // validTeams.Add("Bengals");
-            // validTeams.Add("Browns");
-            // validTeams.Add("Broncos");
-            // validTeams.Add("Texans");
-            // validTeams.Add("Colts");
-            // validTeams.Add("Jaguars");
-            // validTeams.Add("Chiefs");
-            // validTeams.Add("Raiders");
-            // validTeams.Add("Chargers");
-            // validTeams.Add("Dolphins");
-            // validTeams.Add("Patriots");
-            // validTeams.Add("Jets");
-            // validTeams.Add("Steelers");
-            // validTeams.Add("Titans");
-            // string t2 = GetTeam(validTeams);
-            // Console.WriteLine($"You selected {team}");
 
             List<string> validStats = new List<string>();
 
@@ -119,9 +82,8 @@ namespace NFL_QBR_Tracker
                 Console.Write($"You chose the QB stat {Stat} which was {theStat} in {year} for the {team} ");
             }
 
-
-
         }
+
         public static void TestAll()
         {
             bool testDisplayStat = TestDisplayStat.RunTest();
@@ -267,7 +229,7 @@ namespace NFL_QBR_Tracker
             List<string> selectedStats = new List<string>();
             int ix = 1;
             foreach (string validStat in validStats)
-            { 
+            {
                 Console.WriteLine($"{ix}. {validStat} - {GetStatInfo(validStat)}");
                 ix = ix + 1;
 

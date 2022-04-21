@@ -11,7 +11,7 @@ Provide a written response that does all three of the following:
 
 Describes the overall purpose of the program.
 
-A person would run my program to get a QB stat from a certain year to inform themselves on the performance of that team during that year
+A person would run my program to get a QB stat from a certain year to inform themselves on the productivity of the quarterback for that team during that year
 
 ### 3a ii.
 
