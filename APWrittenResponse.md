@@ -11,7 +11,7 @@ Provide a written response that does all three of the following:
 
 Describes the overall purpose of the program.
 
-A person would run my program to get a QB stat from a certain year to inform themselves on the productivity of the quarterback for that team during that year
+A person would run my program to get a learn about QB stats in general and be able to see QB stats from a certain year to inform themselves on the productivity of the quarterback for that team during that year
 
 ### 3a ii.
 
@@ -23,7 +23,7 @@ The video demonstrates my program displaying information to the user.
 
 Describes the input and output of the program demonstrated in the video.
 
-My program accepts user input from the keyboard. They enter a year between 1980 and 2020 and outputs a list of teams the user can choose from. The user then inputs a number between 1-32 which will lead the program to display a list of QB stats. The user then finally inputs a number that correlates to the stat they wanted and the program will output that stat.
+My program accepts user input from the keyboard. The user will be asked to enter a year between 1980 and 2020 and the program outputs a list of teams the user can choose from. The user then inputs a number between 1 and the amount of teams that year which will lead the program to display a list of QB stats. The user then finally can input multiple numbers that correlate to the stats they wanted and then the user will input 0 when they want to display the stat numbers. The program will prompt the user to either answer yes to continue running the program or enter no to end the program.
 ## 3b
 
 Capture and paste two program code segments you developed during the
@@ -35,40 +35,32 @@ used to manage complexity in your program.
 The first program code segment must show how data have been stored in the list.
 
 ```csharp
-   List<string> validTeams = new List<string>();
+   List<string> validStats = new List<string>();
 
-            validTeams.Add("Cardinals");
-            validTeams.Add("Falcons");
-            validTeams.Add("Panthers");
-            validTeams.Add("Bears");
-            validTeams.Add("Cowboys");
-            validTeams.Add("Lions");
-            validTeams.Add("Packers");
-            validTeams.Add("Rams");
-            validTeams.Add("Vikings");
-            validTeams.Add("Saints");
-            validTeams.Add("Giants");
-            validTeams.Add("Eagles");
-            validTeams.Add("49ers");
-            validTeams.Add("Seahawks");
-            validTeams.Add("Buccaneers");
-            validTeams.Add("Commanders");
-            validTeams.Add("Ravens");
-            validTeams.Add("Bills");
-            validTeams.Add("Bengals");
-            validTeams.Add("Browns");
-            validTeams.Add("Broncos");
-            validTeams.Add("Texans");
-            validTeams.Add("Colts");
-            validTeams.Add("Jaguars");
-            validTeams.Add("Chiefs");
-            validTeams.Add("Raiders");
-            validTeams.Add("Chargers");
-            validTeams.Add("Dolphins");
-            validTeams.Add("Patriots");
-            validTeams.Add("Jets");
-            validTeams.Add("Steelers");
-            validTeams.Add("Titans");
+            validStats.Add("passTdPerc");
+            validStats.Add("passSackedPerG");
+            validStats.Add("passSacked");
+            validStats.Add("passCmpPerG");
+            validStats.Add("passFd");
+            validStats.Add("passSackedPerc");
+            validStats.Add("passRating");
+            validStats.Add("passIntPerG");
+            validStats.Add("passTdPerG");
+            validStats.Add("passNetYdsPerAtt");
+            validStats.Add("passFdPerG");
+            validStats.Add("passCmpPerc");
+            validStats.Add("passSackedYds");
+            validStats.Add("passYdsPerG");
+            validStats.Add("passCmp");
+            validStats.Add("passIntPerc");
+            validStats.Add("passInt");
+            validStats.Add("passYdsPerCmp");
+            validStats.Add("passAtt");
+            validStats.Add("passAttPerG");
+            validStats.Add("passLong");
+            validStats.Add("passYds");
+            validStats.Add("passSackedYdsPerG");
+
 ```
 
 ### 3b ii.
@@ -78,13 +70,14 @@ such as creating new data from the existing data or accessing multiple elements
 in the list, as part of fulfilling the program's purpose.
 
 ```csharp
- foreach (string validTeam in validTeams)
+  foreach (string validStat in validStats)
             {
-                Console.WriteLine($"{ix}. {validTeam}");
+                Console.WriteLine($"{ix}. {validStat} - {GetStatInfo(validStat)}");
                 ix = ix + 1;
 
 
             }
+
 ```
 
 ### 3b iii.
@@ -93,11 +86,11 @@ Then provide a written response that does all three of the following:
 
 Identifies the name of the list being used in this response
 
-**TODO: Write, The list is stored in "validTeams"
+**TODO: Write, The list is stored in "validStats"
 
 ### 3b iv.
 
-This list contains the valid teams that can be chosen.
+This list contains the valid stats that can be chosen.
 
 **TODO: Write a sentence describing what is stored in the list**
 
@@ -110,7 +103,7 @@ written differently, if you did not use the list.
 **TODO: Explain why it would be very difficult (or impossible) to write 
 the program without using the list.**
 
-My list contains 32 teams. This list could be written with 32 if / else statements. This list manages complexity by allowing the user selected index to select the team directly. This also allows me to add new teams easily, if 
+My list contains 23 stats. This list could be written with 23 if / else statements. This list manages complexity by allowing the user selected index to select the stat directly. This also allows me to add new stats easily, if 
 I didn't have a list I would have to create additional variables.
 ## 3c.
 
@@ -127,8 +120,9 @@ The first program code segment must be a student-developed procedure that:
 - [ ] Implements an algorithm that includes sequencing, selection, and iteration
 
 ```csharp
- public static string GetTeam(List<string> validTeams)
+         public static string GetTeam(List<string> validTeams)
         {
+ 
 
             if (validTeams == null) throw new ArgumentNullException("List of options may not be null.");
             if (validTeams.Count == 0) throw new ArgumentNullException("List of options must contain at least 1 option.");
@@ -154,15 +148,15 @@ The first program code segment must be a student-developed procedure that:
                     Console.Error.WriteLine("You did not enter a team.");
                 }
 
-                else if (userChoice < 1 || userChoice > validTeams.Count) /
+                else if (userChoice < 1 || userChoice > validTeams.Count)
                 {
                     Console.WriteLine($"The input was not a valid team");
                 }
             }
-            while (userChoice < 1 || userChoice > validTeams.Count); // 
+            while (userChoice < 1 || userChoice > validTeams.Count);
             return validTeams[userChoice - 1];
-    
-            
+           
+            ;
         }
 
 ```
